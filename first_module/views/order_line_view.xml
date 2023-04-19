@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="order_line_tree_view" model="ir.ui.view">
+            <field name="name">Order_line Tree View</field>
+            <field name="model">order.line</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="id" />
+                    <field name="product_id" />
+                    <field name="qty" />
+                    <field name="amount" />
+                    <field name="sub_total" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="order_form_view" model="ir.ui.view">
+            <field name="name">Order_line Form View</field>
+            <field name="model">order.line</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="id" />
+                            <field name="product_id" />
+                        </group>
+                        <group>
+                            <field name="qty" />
+                            <field name="amount" />
+                            <field name="sub_total" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="first_module_order_line_action" model="ir.actions.act_window">
+            <field name="name">OrderLine</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">order.line</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="first_module_order_line_menu" name="OrderLine"
+            parent="first_module.first_module_root_menu" action="first_module_order_line_action"
+            sequence="7" />
+    </data>
+</odoo>

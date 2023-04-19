@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="order_tree_view" model="ir.ui.view">
+            <field name="name">Order Tree View</field>
+            <field name="model">order</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="customer_id" />
+                    <field name="total_amount" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="order_form_view" model="ir.ui.view">
+            <field name="name">Order Form View</field>
+            <field name="model">order</field>
+            <field name="arch" type="xml">
+                <form string="Khối Form">
+                    <sheet>
+                        <group>
+                            <field name="customer_id" />
+                            <field name="total_amount" />
+                        </group>
+                        <notebook>
+                            <page string="Line">
+                                <field name="order_line_ids">
+                                    <tree editable='top'> 
+                                        <field name='product_id' />
+                                        <field name='qty' />
+                                        <field name='amount' />
+                                        <field name='sub_total' />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="first_module_order_action" model="ir.actions.act_window">
+            <field name="name">Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">order</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="first_module_order_menu" name="Order"
+            parent="first_module.first_module_root_menu" action="first_module_order_action"
+            sequence="6" />
+    </data>
+</odoo>

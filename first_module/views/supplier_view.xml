@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="supplier_tree_view" model="ir.ui.view">
+            <field name="name">Supplier Tree View</field>
+            <field name="model">supplier</field>
+            <field name="arch" type="xml">
+                <tree string="Nhà Cung Cấp ">
+                    <field name="name" />
+                    <field name="found_date" />
+                    <field name="quality_level" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="supplier_form_view" model="ir.ui.view">
+            <field name="name">Supplier Form View</field>
+            <field name="model">supplier</field>
+            <field name="arch" type="xml">
+                <form string="Nhà Cung Cấp ">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="found_date" />
+                            </group>
+                            <group>
+                                <field name="quality_level" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="first_module_supplier_action" model="ir.actions.act_window">
+            <field name="name">Suppliers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">supplier</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="first_module_root_menu" name="First Menu" />
+        <menuitem id="first_module_supplier_menu" name="Supplier"
+            parent="first_module.first_module_root_menu" action="first_module_supplier_action"
+            sequence="3" />
+
+
+    </data>
+</odoo>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="product_tree_view" model="ir.ui.view">
+			<field name="name">Product Tree View</field>
+			<field name="model">product</field>
+			<field name="arch" type="xml">
+				<tree string="">
+					<field name="name" />
+					<field name="price" />
+					<field name="category_id" />
+					<field name="price_wth_tax" />
+					<field name="purchase_date" />
+					<field name="active" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="product_form_view" model="ir.ui.view">
+			<field name="name">Product Form View</field>
+			<field name="model">product</field>
+			<field name="arch" type="xml">
+				<form string="">
+					<sheet>
+						<group>
+							<group>
+								<field name="name" string="Product Name" />
+								<field name="category_id" />
+								<field name="warranty" />
+								<!-- <field name="category_id" /> -->
+								<field name="active" />
+							</group>
+							<group>
+								<field name="price" />
+								<field name="vat" attrs="{'invisible':[('price','&lt;=', 0)]}" />
+								<field name="price_wth_tax" />
+								<field name="purchase_date"
+									attrs="{'required':[('price','&gt;', 0)]}" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="first_module_product_action" model="ir.actions.act_window">
+			<field name="name">Products</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="first_module_root_menu" name="First Menu" />
+		<menuitem id="first_module_product_menu" name="Products"
+			parent="first_module.first_module_root_menu" action="first_module_product_action"
+			sequence="1" />
+	</data>
+</odoo>
