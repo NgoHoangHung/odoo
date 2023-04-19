@@ -9,10 +9,15 @@ class OrderLine(models.Model):
     qty = fields.Integer(string='Qty')
     amount = fields.Integer(string='Amount') 
     sub_total = fields.Integer(string='') 
-
+    
     @api.onchange('qty','amount')
     def onchange_sub_total(self):
-        if self.amount*self.qty != 0:
+        if self.amount and self.qty:
             self.sub_total = self.amount*self.qty 
-        else:
-            self.sub_total = 0
+
+    # @api.onchange('qty','amount')
+    # def onchange_sub_total(self):
+    #     if self.amount*self.qty != 0:
+    #         self.sub_total = self.amount*self.qty 
+    #     else:
+    #         self.sub_total = 0

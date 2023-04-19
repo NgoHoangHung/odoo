@@ -13,6 +13,7 @@
     'website': '',
     'depends': ['purchase'],
     'data': [
+        'wizard/employee_leave_reason_view.xml',
         'views/product_category_view.xml',
         'views/customer_view.xml',
         'views/product_view.xml',

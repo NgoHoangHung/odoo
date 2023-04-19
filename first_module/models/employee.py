@@ -13,8 +13,8 @@ class Employee(models.Model):
 
     def active_deactive(self):
             self.active = not self.active
-    def leave(self):
-        self.state = '1'
+    # def leave(self):
+    #     self.state = '1'
 
     def work(self):
         self.state = '0'
