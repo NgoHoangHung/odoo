@@ -5,10 +5,11 @@
             <field name="name">Employee Tree View</field>
             <field name="model">employee</field>
             <field name="arch" type="xml">
+                <!-- <tree string="Class Tree" decoration-info="active=='True'" editable="bottom"> -->
                 <tree string="">
                     <field name="name" />
+                    <field name="state" />
                     <field name="active" />
-                    <!-- <field name="state" /> -->
                 </tree>
             </field>
         </record>
@@ -27,7 +28,7 @@
                         <button name="%(first_module.employee_leave_reason_action)d" string="Leave"
                             type="action" states="0" />
                         <!-- <button name="leave" string="Leave" type="object" states="0" /> -->
-                        <button name="work" string="Work" type="object" states="1,2,3" />
+                        <!-- <button name="work" string="Work" type="object" states="1,2,3" /> -->
                         <field name="state" widget="statusbar" />
                        
                     </header>

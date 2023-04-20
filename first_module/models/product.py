@@ -39,7 +39,7 @@ class Product(models.Model):
 
     def write(self, vals):
         result = super(Product, self).write(vals)
-        return result
+        return result 
 
     def unlink(self):
         return super(Product, self).unlink()

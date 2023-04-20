@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <form string="Employee Leave Reason">
                     <group>
-                        <field name="reason" />
+                        <field name="reason" required='1'/>
                     </group>
                     <footer>
                         <button string="update" type="object" name="update_leave_reason"
