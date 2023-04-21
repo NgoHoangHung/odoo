@@ -10,13 +10,15 @@
     """,
     'category': 'Orther',
     'depends': [
-    
+    'first_module', 'sale'
     ],
     'data': [
-      
+      'views/customer_view.xml',
+      'views/employee_view.xml',
+      'views/res_partner_view.xml',
+      'security/security.xml',
     ],
     'installable': True,
     'application': True,
-    'auto_install': False,
-    'auto_upgrade': True,
 }
+ 

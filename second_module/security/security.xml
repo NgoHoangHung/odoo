@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id = "first_module.access_product_internal_user" model = "ir.model.access">
+			<field name = "perm_write">1</field>
+			
+		</record>
+	</data>
+</odoo>
